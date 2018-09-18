@@ -1,23 +1,29 @@
 print("*** Välkommen till Internetbanken ***")
-Insättning = ""
-Uttag = ""
+
+insattning = 0
+uttag = 0
 meny = 0
+saldo = 0
+
 while meny != 4:
     print("1. Insättning\n"
     +"2. Uttag\n"
-    +"3. Visa saldo"
+    +"3. Visa saldo\n"
     +"4. Avsluta")
+    
     try:
-         meny = int(input("Välj vad du vill göra: ")
+         meny = int(input("Gör ett val: "))
     except:
         print("Du måste ange en siffra!")
 
     if meny == 1:
-        Insättning += input("Ange en siffra: ") 
+        insattning = input("Ange en siffra: ")
+        saldo = saldo + int(insattning)
     elif meny == 2:
-        Uttag += input("Ange en siffra: ")
+        uttag = input("Ange en siffra: ")
+        saldo = saldo - int(uttag)
     elif meny == 3:
-        print("Din Saldo:" Instättning+Uttag)
+        print("Din Saldo: " ,saldo)
     elif meny == 4:
         print("*** Välkommen åter ****")
     else:
